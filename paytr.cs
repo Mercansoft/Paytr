@@ -82,8 +82,10 @@ public partial class iframe_sample : System.Web.UI.Page
             if (json.status == "success") {
                 paytriframe.Src = "https://www.paytr.com/odeme/guvenli/" + json.token + "";
                 paytriframe.Visible = true;
+                // İşlem başarılı ise yapılacak işlemler. sipariş onaylama vb
             }else{
                 Response.Write("PAYTR IFRAME failed. reason:" + json.reason + "");
+                // işlem başarısız ise yapılacak işlemler sepete geri döndürme vb
             }
         }
     }
